@@ -13,34 +13,21 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <img src="https://picsum.photos/800/500" alt="" />
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-card-title>News Title</ion-card-title>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <img src="https://picsum.photos/800/500" alt="" />
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-card-title>News Title</ion-card-title>
-    </ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <img src="https://picsum.photos/800/500" alt="" />
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-card-title>News Title</ion-card-title>
-    </ion-card-content>
-  </ion-card>
+    <div>
+      <ion-spinner *ngIf="!newsList"></ion-spinner>
+    </div>
+    <div *ngIf="newsList">
+      <div *ngFor="let news of newsList">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Card Title</ion-card-title>
+            <img src="{{ news.urlToImage }}" alt="" />
+            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-card-title>{{news.title}}</ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
 </ion-content>
