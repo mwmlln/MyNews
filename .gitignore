@@ -67,5 +67,8 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Env files
+src/environments/environment.ts
 
-node_modules
+# Node files
+node_modules/
