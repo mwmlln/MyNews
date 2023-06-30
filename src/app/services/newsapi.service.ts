@@ -12,12 +12,12 @@ export class NewsapiService {
 
   constructor(private http: HttpClient) { }
 
-  getTopHeadlines(): Observable<NewsResponse> {
+  getGlobalTopHeadlines(): Observable<NewsResponse> {
     return this.http.get<NewsResponse>(
-      this.topHeadlinesPath + `top-headlines/sources?pageSize=10&apiKey=${environment.API_KEY}`)
+      this.topHeadlinesPath + `top-headlines/sources?apiKey=${environment.API_KEY}`)
   }
 
-  getLocalHeadlines(country: string): Observable<NewsResponse> {
+  getTopHeadlines(country: string): Observable<NewsResponse> {
     return this.http.get<NewsResponse>(
       this.topHeadlinesPath + `top-headlines?country=${country}&pageSize=10&apiKey=${environment.API_KEY}`)
   }

@@ -19,7 +19,7 @@ export class TabsPage {
   }
 
   getTopHeadlines() {
-    this.newsApiService.getTopHeadlines().pipe(map((res) => res.articles)).subscribe((news) => (this.newsList = news)
+    this.newsApiService.getTopHeadlines('us').pipe(map((res) => res.articles)).subscribe((news) => (this.newsList = news)
     );
     console.log(this.newsList);
 
