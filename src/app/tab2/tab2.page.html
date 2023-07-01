@@ -18,10 +18,10 @@
   </div>
   <div *ngIf="newsList">
     <div *ngFor="let news of newsList">
-      <ion-card>
+      <ion-card href="{{ news.url }}" target="_blank" rel="noopener">
         <ion-card-header>
           <ion-card-title>{{ news.source.name }}</ion-card-title>
-          <img src="{{ news.urlToImage }}" alt="" />
+          <img *ngIf="news.urlToImage" src="{{ news.urlToImage }}" alt="" />
           <ion-card-subtitle>{{news.publishedAt}}</ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>

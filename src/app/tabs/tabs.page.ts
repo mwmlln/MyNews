@@ -15,13 +15,7 @@ export class TabsPage {
   constructor(private activRoute: ActivatedRoute, private newsApiService : NewsapiService) {}
 
   ngOnInit() {
-    this.getTopHeadlines();
+    this.newsApiService.getTopHeadlines('us');
   }
 
-  getTopHeadlines() {
-    this.newsApiService.getTopHeadlines('us').pipe(map((res) => res.articles)).subscribe((news) => (this.newsList = news)
-    );
-    console.log(this.newsList);
-
-  }
 }

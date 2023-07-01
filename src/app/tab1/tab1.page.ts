@@ -15,14 +15,13 @@ export class Tab1Page {
 
   constructor(private activRoute: ActivatedRoute, private newsApiService : NewsapiService) {}
   ngOnInit() {
-    this.getTopHeadlines('us');
+    this.getUSHeadlines();
   }
 
-  getTopHeadlines(country: string) {
-    console.log("headline: " + this.newsApiService.getTopHeadlines('us'));
+  getUSHeadlines() {
+    // console.log("headline: " + this.newsApiService.getTopHeadlines('us'));
     this.newsApiService.getTopHeadlines('us').pipe(map((res) => res.articles)).subscribe((news) => (this.newsList = news)
     );
-    console.log(this.newsList);
 
   }
 

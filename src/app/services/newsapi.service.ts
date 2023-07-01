@@ -12,13 +12,14 @@ export class NewsapiService {
 
   constructor(private http: HttpClient) { }
 
-  getGlobalTopHeadlines(): Observable<NewsResponse> {
-    return this.http.get<NewsResponse>(
-      this.topHeadlinesPath + `top-headlines/sources?apiKey=${environment.API_KEY}`)
-  }
 
   getTopHeadlines(country: string): Observable<NewsResponse> {
     return this.http.get<NewsResponse>(
       this.topHeadlinesPath + `top-headlines?country=${country}&pageSize=10&apiKey=${environment.API_KEY}`)
+  }
+
+  getCategory(category: string): Observable<NewsResponse> {
+    return this.http.get<NewsResponse>(
+      this.topHeadlinesPath + `top-headlines?category=${category}&pageSize=10&apiKey=${environment.API_KEY}`)
   }
 }

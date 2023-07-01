@@ -14,15 +14,14 @@ export class Tab2Page {
   newsList: ArticlesEntity[] | any;
 
   constructor(private activRoute: ActivatedRoute, private newsApiService : NewsapiService) {}
-  ngOnInit() {
-    this.getTopHeadlines('us');
-  }
 
-  getTopHeadlines(country: string) {
-    console.log("headline: " + this.newsApiService.getTopHeadlines('ie'));
+  ngOnInit() {
+    this.getIEHeadlines();
+  }
+  getIEHeadlines() {
+    // console.log("headline: " + this.newsApiService.getTopHeadlines('us'));
     this.newsApiService.getTopHeadlines('ie').pipe(map((res) => res.articles)).subscribe((news) => (this.newsList = news)
     );
-    console.log(this.newsList);
 
   }
 }
