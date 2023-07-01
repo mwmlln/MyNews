@@ -11,6 +11,7 @@ import { ArticlesEntity } from '../Interfaces/news-response';
 })
 export class Tab3Page {
   newsList: ArticlesEntity[] | any;
+  selectedCategory: string = 'sports';
 
   constructor(private activRoute: ActivatedRoute, private newsApiService : NewsapiService) {}
   ngOnInit() {
@@ -18,7 +19,7 @@ export class Tab3Page {
   }
 
   getEntertainmentHeadlines() {
-    this.newsApiService.getCategory('entertainment').pipe(map((res) => res.articles)).subscribe((news) => (this.newsList = news)
+    this.newsApiService.getNewsByCategory(this.selectedCategory).pipe(map((res) => res.articles)).subscribe((news) => (this.newsList = news)
     );
 
   }

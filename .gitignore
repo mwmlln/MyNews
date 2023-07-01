@@ -70,5 +70,3 @@ Thumbs.db
 # Env files
 src/environments/environment.ts
 
-# Node files
-node_modules/

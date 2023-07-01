@@ -18,7 +18,7 @@
     </div>
     <div *ngIf="newsList">
       <div *ngFor="let news of newsList">
-        <ion-card href="{{ news.url }}" target="_blank" rel="noopener">
+        <ion-card (click)="getDetails(news)">
           <ion-card-header>
             <ion-card-title>{{ news.source.name }}</ion-card-title>
             <img *ngIf="news.urlToImage" src="{{ news.urlToImage }}" alt="" />

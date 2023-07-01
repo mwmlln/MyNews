@@ -16,11 +16,14 @@
     </ion-toolbar>
   </ion-header>
 
+<ion-title>News by Category</ion-title>
+
   <div>
     <ion-spinner *ngIf="!newsList"></ion-spinner>
   </div>
   <div *ngIf="newsList">
     <div *ngFor="let news of newsList">
+
       <ion-card href="{{ news.url }}" target="_blank" rel="noopener">
         <ion-card-header>
           <ion-card-title>{{ news.source.name }}</ion-card-title>
