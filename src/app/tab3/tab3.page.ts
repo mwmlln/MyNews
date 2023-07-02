@@ -11,7 +11,7 @@ import { ArticlesEntity } from '../Interfaces/news-response';
 })
 export class Tab3Page {
   newsList: ArticlesEntity[] | any;
-  selectedCategory: string = 'sports';
+  selectedCategory: string = 'entertainment';
 
   constructor(private activRoute: ActivatedRoute, private newsApiService : NewsapiService) {}
   ngOnInit() {
