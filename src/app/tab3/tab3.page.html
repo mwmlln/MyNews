@@ -1,10 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title color="warning">
-      Entertaiment News
+    <ion-title color="success">
+      Entertainment News
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,40 +9,7 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Entertaiment News</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-<ion-title>News by Category</ion-title>
-
-  <div>
-    <ion-spinner *ngIf="!newsList"></ion-spinner>
-  </div>
-  <div *ngIf="newsList">
-    <div *ngFor="let news of newsList">
-
-      <ion-card href="{{ news.url }}" target="_blank" rel="noopener">
-        <ion-card-header>
-          <ion-card-title>{{ news.source.name }}</ion-card-title>
-          <img *ngIf="news.urlToImage" src="{{ news.urlToImage }}" alt="" />
-          <ion-card-subtitle>{{news.publishedAt}}</ion-card-subtitle>
-        </ion-card-header>
-        <ion-card-content>
-          <ion-card-title>{{news.title}}</ion-card-title>
-        </ion-card-content>
-      </ion-card>
-    </div>
-  </div>
-</ion-content>
- News
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Global News</ion-title>
+      <ion-title size="large" >Entertainment News</ion-title>
     </ion-toolbar>
   </ion-header>
 
